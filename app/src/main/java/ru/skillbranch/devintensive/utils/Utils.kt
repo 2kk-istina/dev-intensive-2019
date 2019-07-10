@@ -65,22 +65,34 @@ object Utils {
             'й' to "i", 'к' to "k",
             'л' to "l", 'м' to "m",
             'н' to "n", 'о' to "o",
-            'р' to "r",
-            'п' to "p", 'с' to "s",
-            'т' to "t", 'у' to "u",
-            'ф' to "f", 'х' to "h",
-            'ц' to "c", 'ч' to "ch",
-            'ш' to "sh", 'щ' to "sh'",
-            'ъ' to "", 'ы' to "i",
-            'ь' to "", 'э' to "e",
-            'ю' to "yu", 'я' to "ya", ' ' to " ")
+            'р' to "r", 'п' to "p",
+            'с' to "s", 'т' to "t",
+            'у' to "u", 'ф' to "f",
+            'х' to "h", 'ц' to "c",
+            'ч' to "ch", 'ш' to "sh",
+            'щ' to "sh'", 'ъ' to "",
+            'ы' to "i", 'ь' to "",
+            'э' to "e", 'ю' to "yu",
+            'я' to "ya", ' ' to " ")
 
         var result = ""
+        var resultX = ""
+
         for (char in nameX) {
             if (letters.containsKey(char) )
                 result += letters.getValue(char)
+            else {
+                resultX +=char
+            }
         }
-    return result
+
+        val parts : List<String>? = result?.split(" ")
+        val firstName =parts?.getOrNull(0)?.capitalize()
+        val lastName =parts?.getOrNull(1)?.capitalize()
+
+       // println(resultX.capitalize() + divider + result.capitalize())
+
+    return firstName + divider + lastName
     }
 
 }
