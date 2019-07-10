@@ -77,6 +77,7 @@ object Utils {
 
         var result = ""
         var resultX = ""
+        
 
         for (char in nameX) {
             if (letters.containsKey(char) )
